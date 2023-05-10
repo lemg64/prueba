@@ -1,0 +1,37 @@
+<div class="col-sm-12 col-md-12 mt-4 p-0">
+            <div class="card" >
+                <div class="card-header text-center">
+                   <h5>Lista de Contactos</h5>
+                </div>
+             <div class="card-body col-md-12">
+                <div class="detalle-tb-2">
+                    <table class="table table-striped ">
+                        <thead class="text-center">
+                         <th>Nombre</th>
+                         <th>Telefono</th>
+                         <th>Dirección</th>
+                         <th>Ciudad</th>
+                         <th>Precio</th>
+                         <th>Acciones</th>
+                        </thead>
+                         <tbody class="text-center">
+                            {{#each satelites}}
+                            <tr>
+                                <td>{{nombre}}</td>
+                                <td> {{telefono}} </td>
+                                <td> {{direccion}} </td>
+                                <td> {{ciudad}} </td>
+                                <td>{{precio}}</td>
+                                <td><a href="../responsables/edit/{{id}}" class="btn btn-primary m-2" >Editar</a>
+                                 <a href="../responsables/eliminar/{{id}}" id="eliminar" class="btn btn-danger m-2" >Eliminar</a></td>
+                            </tr>
+                            {{/each}}
+                         </tbody>
+                   </table>
+                </div>
+             </div>
+            </div>
+        </div>       
+    </div>
+</div>
+<script type="text/javascript" src="/js/usersImport.js" ></script>

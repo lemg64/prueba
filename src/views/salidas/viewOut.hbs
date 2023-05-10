@@ -1,0 +1,46 @@
+<div class="container">
+<h1 class="text-center" >Vista de Documento de Salida Individual</h1>
+
+   <div class="card">
+        <div class="card-header" style="background-color: rgb(6, 36, 55); color:rgb(217, 219, 193)" >
+            <div class="row" >
+            <div class="col-sm-3">
+                 {{#each headView}}
+      <h5> Tipo: {{Tipo}} </h5>
+      <h5>Nombre: <em>{{Nombre}}</em></h5>
+      <h5>Fecha: <em>{{fechaLit}}</em> </h5>
+      <h5>Total Mov: <em> {{cantidad}} (Unds)</em></h5>
+    </div>   
+       {{/each}}
+    </div>
+            </div>
+                </div>
+<table class="table">
+    <thead>
+        <header class="card-header text-center">
+            <th class="text-center"> Referencia</th>
+            <th class="text-center">Descripcion</th>
+            <th class="text-center col-1">cantidad</th>
+            <th class="text-center col-1">Saldo</th>
+            <th class="text-center">Observaciones</th>
+        </header>
+        {{#each tableView}}
+        <tbody>
+            <tr class="text-center" >
+                <td>{{referencia}}</td>
+                <td>{{descripcion}}</td>
+                <td> {{cantidadSalida}} </td>
+                <td> {{saldo}} </td>
+                <td> {{observaciones}} </td>
+            </tr>
+        </tbody>
+        {{/each}}
+    </thead>
+    
+</table>
+<div class="block">
+<a class="btn btn-primary" href="../list" > Atrás</a>
+</div>
+    </div>
+
+</div>

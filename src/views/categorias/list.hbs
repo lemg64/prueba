@@ -1,0 +1,31 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each categorias}}
+         <div class="col-md-3 mt-2">
+            <div class="card text-center">
+                <div class="card-header">
+                     <h5 class="card-title text-uppercase">
+                        {{nombre}}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <h6>Descripción:</h6>
+                    <h6> {{descripcion}}</h6>
+                   <div class="card-footer">
+                    <a href="/categorias/edit/{{id}}" class="btn btn-success">Editar</a>
+                    <a href="/categorias/eliminar/{{id}}" class="btn btn-danger">Eliminar</a>
+                   </div>
+                </div>
+            </div>
+         </div>
+         {{else}}
+         <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>Aún no hay categorias creadas!!</p>
+                <a href="../categorias" class="btn btn-success">Crea una.. </a>
+            </div>
+         </div>
+        {{/each}}
+    </div>
+
+</div>

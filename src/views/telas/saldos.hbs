@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row bg-dark text-light mt-2"><h3 class="text-center">Saldo de telas</h3></div>
+  <div class="row">
+    <div class="col-1"><p>Filtrar por:</p></div>
+    <div class="col-2"> <select type="text" class="form-control " name="tipo" id="tipolist" onchange=""><option value="0"></option>{{#each tipo}}<option value="{{id}}">{{nombre}}</option> {{/each}}</select></div>
+    <div class="col-2"><input type="text"placeholder="Nombre"></div>
+    <div class="col-2"><input type="date"placeholder="Fecha"></div>
+    <div class="col-1"><a href="/filterBy/" class="btn btn-secondary" style="height: 20px; " >Filtar</a></div>
+  </div>
+    <div class="row">
+  <table class="table">
+    <thead class="text-center">
+      <th class="col-1">Nro Doc</th>
+      <th>Fecha</th>      
+      <th>Tipo</th>
+      <th>Nombre</th>
+      <th class="col-1" >Cantidad</th>
+      <th class="col-1" >Saldo</th>
+      <th>Acciones</th>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td>1</td>
+        <td>Febrero 12 de 2023</td>
+        <td>Satelite</td>
+        <td>Luis Eduardo </td>
+        <td>125</td>
+        <td>25</td>
+        <td><a href="http://" class="p-2" >Ver</a><a href="http://" class="p-2" >Imprimir</a></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Febrero 12 de 2023</td>
+        <td>Satelite</td>
+        <td>Luis Eduardo </td>
+        <td>125</td>
+        <td>24</td>
+        <td><a href="http://google.com" class="p-2" >Ver</a><a href="http://" class="p-2" >Imprimir</a></td>
+      </tr>
+    </tbody>
+
+  </table>
+  </div>
+</div>

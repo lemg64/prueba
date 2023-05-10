@@ -1,0 +1,153 @@
+
+<div class="container mt-4 mb-4" id="container-add">
+    <form  action="/entradas/add" method="post">
+<body class="bg-light ">
+     <main style="">
+        <section class="row" >
+            <div class="" style="">
+                <div class="card">
+                    <div class="card-header"> 
+                        <div class="row">
+                             <div class="card-title col-md-8">
+                            <h4>Generar Entrada Satélite</h4>
+                             </div>  
+                        <div class="col-md-3 flex flex-row-reverse bd-highlight">
+                           {{#each Cons}}
+                          <div class="p-2 bd-highlight"> <h4 >ENTRADA Nº: {{'ID_E+1'}} </h4></div>
+                          {{/each}}
+                          
+                        </div>                                                           
+                        </div>
+                    </div>
+                                   
+                    <div class="card-body">
+                        <section class="row"  >
+                            <form name="form2" id="form2">
+                               <div class="form-group col-md-2">
+                                <label for="col-md-4">Seleccione Tipo</label>
+                                <select type="text" class="form-control" name="tipo" id="tipo" onchange="init()">
+                                    <option value="0">-Seleccione-</option>
+                                    <option value="1">Satelite</option>
+                                    <option value="2">Cliente</option>
+                                    <option value="3">Tintoreria</option>
+                                    <option value="4">Vendedor</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                <label class="form-group" for="nombre">Nombre:</label>  
+                                <select type="text" class="form-control" id="nombre" name="nombre">
+                                    <option value="">-Seleccione-</option>
+                                    {{#each sat}}
+                                     <script>  n++;
+                                        console.log(n) </script> 
+                                     <option value="">{{nombre}} {{n}}</option>s
+                                    {{/each}}
+                                </select>
+                             </div>                              
+                                                                                                
+                            </form>
+                        </section>
+                                </div>
+                                <section class="row" >
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">                         
+                        <div class="card-title">
+                            <h5>Detalle Entrada</h5>
+                            </div>                  
+                    </div>
+                    <div class="card-body">
+                        <form action="/entradas/add" method="POST" class="row">
+                               <div class="form-group col-md-1">
+                                <label for="">Referencia</label>
+                                 <select type="number" class="form-control" name="referencia">
+                                   <option value="0">-Seleccione-</option>
+                                   <option value="1">101900</option>
+                                   <option value="2">101901</option>
+                                   <option value="3">101902</option>
+                                   <option value="4">101903</option>
+                                   </select>
+                            </div>                                    
+                            <div class="form-group col-md-1">
+                                <label for="">Cantidad  {{prueba}}</label>
+                                <input type="number" class="form-control" name="cantidad">
+                                </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Descripción</label>
+                                <input type="text" class="form-control" name="descripcion">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label for="">Observaciones</label>
+                                <input type="text" class="form-control" name="observaciones">
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <button class="btn btn-success mt-4">Guardar</button>
+                                  <button type="buton" class="btn btn-primary mt-4" onclick="prueba()" >Prueba</button>
+                                </div> 
+                                   </div> 
+                                </div>
+                            </section>
+                               <div class="card"></div>
+                                    <section class="row mt-4">
+                                        <div class="col">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h5>Lista de Elementos</h5>
+                                                   </div>
+                                                </div>
+                                                    <div class="col" id="detalle">
+                                                    <table class="table table-striped">
+                                                  <thead class="text-center">
+                                                    
+                                                    <tr>
+                                                       
+                                                        <th>Referencia</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Descripción</th>
+                                                        <th>Observaciones</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                         </thead>
+                                                        
+                                                       
+                                                <tbody>               
+                                                            
+                                              {{#each datos}}
+                                                <tr class="text-center"> 
+                                                    <div class="mt-4">
+                                                                                                
+                                                        <td>{{referencia}}</td>
+                                                        <td>{{cantidad}}</td>
+                                                        <td>{{descripcion}}</td>
+                                                        <td>{{observaciones}}</td>
+                                                        <td> <a href="/entradas/eliminar/{{idR}}" style="hover: label='Eliminar';"> <img src="..\img\Img Eliminar.jpg" alt="Eliminar" height ="30" width="30" /></a>
+                                                            </td>
+                                                    
+                                                </tr>            
+                                                     {{/each}}
+                                                        
+                                                </tbody>   
+                                                        
+                                                </div>                          
+                                            </table>  
+                                        </div>
+                                        
+                                             <section>
+                                                
+                                           <div class="card-header d-flex flex-row-reverse bd-highlight"> <h4>Cantidad Total: {{sumall}}</h4> </div>
+                                               
+                                        </section>          
+                                         <div class="col-md-3 mt-2 mb-4 mx-5 ms-auto">
+                                          
+                                          <a href="./add/confirm" class="btn btn-success">Guardar Entrada</a>
+                                       <button type="button" class="btn btn-danger float-right" id="cancelar">Cancelar</button>
+                                        
+                                    </div>                                
+                                  </div>
+                               </div>  
+                               </section>  
+                  </main>    
+           </form>
+</body>
+</div>
+

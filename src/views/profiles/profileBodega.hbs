@@ -1,0 +1,21 @@
+<main class="index" >
+
+<header class="masthead d-flex">
+
+    <div class="container text-center my-auto">
+        <h1 class="mb-1" >Thunder Jeans</h1>
+        <h3 class="mb-5" > <em> Seguimiento de Producción </em></h3>
+        <h2>Bienvenido {{user.name}} </h2>
+       
+      {{#if (eq user.rol_id 1)}}
+    <h1>Bodega</h1>
+{{else}}
+    <h1>Administrador</h1>
+{{/if}}
+
+
+    </div>
+
+</header>
+
+</main>

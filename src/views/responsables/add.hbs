@@ -1,0 +1,119 @@
+<div class="section" id="seccionAdd">
+    <div class="row">
+        <div class="col-md-3 p-2 m-2">
+           <div class="card mt-4">
+            <div class="card-header text-center">
+                <h5>Crear Nuevo Usuario</h5>
+            </div>
+            <div class="form m-4">
+                <form action="../responsables" method="POST">
+                     <div class="m-2">
+                    <label for="idTipo" class="col-10" >Tipo de Usuario:</label>
+                    <select name="idTipo" id="tipo" class="form-control col-6">
+                        <option value="0">-Seleccione-</option>
+                         {{#each tipo}}
+                        <option value="{{id}}">{{nombre}}</option>
+                        {{/each}}
+                     </select>
+                     <div class="import-user" >
+                       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Opciones
+          </a>
+          <ul class="dropdown-menu text-darkness" aria-labelledby="">
+            <li><input class="dropdown-item" type="text" id="nit" placeholder="Buscar por Id" >  </li>
+            <li><button type="button" class="btn btn-success m-2" onclick="finduser()">Buscar</button></li> 
+            <li><a href="responsables/addTipo" class="btn btn-primary m-2" target="_blank" >Crear Tipo de Usuario</a></li> 
+                        
+             </ul>
+            </li>         
+            </ul>
+        </li>
+                       
+                            </div>
+
+                    
+                     
+                    </div>
+                    <div class="m-2">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" id="name" >
+                    </div>
+                     <div class="m-2">
+                    <label for="nombre">Nit/Cédula:</label>
+                    <input type="text" class="form-control" name="nit" id="nitFound" >
+                    </div>
+                     <div class="m-2">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" class="form-control" name="telefono" id="telefono" >
+                    </div>
+                     <div class="m-2">
+                    <label for="telefono2">Teléfono2:</label>
+                    <input type="text" class="form-control" name="telefono2" id="telefono2" >
+                    </div>
+                     <div class="m-2">
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" class="form-control" name="direccion" id="direccion" >
+                    </div>
+                     <div class="m-2">
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" class="form-control" name="ciudad" id="ciudad" >
+                    </div>
+                     <div class="m-2">
+                    <label for="correo">Correo:</label>
+                    <input type="text" class="form-control" name="correo" id="correo" >
+                    </div>
+                     <div class="m-2 col-12" >
+                    <label for="referenciadoPor" class="col-12">Referenciado Por:</label>
+                    <input type="text" class="form-control" name="referenciadopor">
+                    </div>
+                     <div class="m-2">
+                    <label for="precio">Precio:</label>
+                    <input type="text" class="form-control" name="precio">
+                    </div>
+                    <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-block">Crear Usuario</button>
+        <a href="/" class="btn btn-secondary btn-block">Salir</a>
+        </div>
+                </form>
+               
+            </div>
+           </div>
+        </div> 
+        <div class="col-sm-12 col-md-8 mt-4 p-2 m-2">
+            <div class="card" >
+                <div class="card-header text-center">
+                   <h5>Lista de Contactos</h5>
+                </div>
+             <div class="card-body col-md-12">
+                <div class="detalle-tb-2">
+                    <table class="table table-striped ">
+                        <thead class="text-center">
+                         <th>Nombre</th>
+                         <th>Telefono</th>
+                         <th>Dirección</th>
+                         <th>Ciudad</th>
+                         <th>Precio</th>
+                         <th>Acciones</th>
+                        </thead>
+                         <tbody class="text-center">
+                            {{#each satelites}}
+                            <tr>
+                                <td>{{nombre}}</td>
+                                <td> {{telefono}} </td>
+                                <td> {{direccion}} </td>
+                                <td> {{ciudad}} </td>
+                                <td>{{precio}}</td>
+                                <td><a href="../responsables/edit/{{id}}" class="btn btn-primary m-2" >Editar</a>
+                                 <a href="../responsables/eliminar/{{id}}" id="eliminar" class="btn btn-danger m-2" >Eliminar</a></td>
+                            </tr>
+                            {{/each}}
+                         </tbody>
+                   </table>
+                </div>
+             </div>
+            </div>
+        </div>       
+    </div>
+</div>
+<script type="text/javascript" src="/js/usersImport.js" ></script>

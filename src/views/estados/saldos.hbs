@@ -1,0 +1,233 @@
+ <script type='text/javascript' src="/js/seguimiento.js"> </script> 
+ <h3>Seguimiento Producción</h3>
+ <div class="card ">
+    <div class="detalle-tb-3">
+ <table class="table table table-hover  text-center">
+    <thead>
+        <th>Fecha</th>
+        <th> <a href="/estados">Satelite</a></th>
+        <th> <a href="../estados/orderbyref">Referencia</a></th>
+        <th>Descripción</th>
+        <th>Cantidad Cortada</th>
+        <th>Total Entradas</th>
+        <th>Total Salidas</th>
+        <th>Saldo</th>
+        <th>Muestras</th>
+        <th>Enviado a Tintoreria</th>
+        <th>Recibido de Tintoreria</th>
+        <th>Terminación</th>
+        <th>En Bodega</th>
+    </thead>
+    <tbody>
+         {{#each productos}}  
+            
+     <tr > 
+        
+        <td style="width: 120px;"> {{fecha}} </td>
+        <td style="width: 120px;" > {{nombre}} </td>
+        <td style="width: 20px;" class="m-0"> {{referencia}} </td>
+        <td style="width: 120px;"> {{Producto}} </td>
+        <td style="width: 30px;"> {{cantidadPrendas}} </td>
+        <td style="width: 30px;"> <a style="text-decoration: none; " href="../estados/resumen/{{id}}/{{sateliteId}}" target="_blank">{{totalEntradas}}</a> </td>
+        <td style="width: 30px;"> {{totalSalidas}} </td>
+        <td style="width: 30px;"> {{sumar cantidadPrendas totalSalidas totalEntradas}} </td>
+         <td> <button id="open-popup{{id}}" data-popup="popup-{{id}}" class="open-popup btn btn-outline-success m-2 col-md-12 {{estado}}" onclick="openPop({{id}},1)" >Ver</button> 
+        
+          <div class="popup" id="popup-1{{id}}">
+  <div class="popup-content">
+   <div class="card p-2">
+      <div class="card-head text-auto">
+    <h4>Seguimiento de Muestra</h4>
+    <h6><em>Ref: {{referencia}}</em></h6>
+    <h6><em>Nombre: {{Producto}}</em></h6>
+    <h6>Estado: <em style="color: rgb(7, 98, 36);">{{estado}}</em> </h6>
+      </div>
+      <hr>
+    <h4>Ficha Técnica</h4>
+    <form action="/estados/muestras" method="post">
+      <div class="row">
+      <div class="form-group aling-pers col-6">
+      <label for="fecha" ><h6>Fecha Aprobado:</h6></label>
+      </div>
+      <div class="form-group col-6">
+     <input type="date" class="form-control mt-2 p-2" name="fecha" value="{{fechaProccesApro}}" >
+     <input type="text" class="form-control mt-2 p-2" name="id" value="{{id}}" style="display: none;" >
+      </div>
+            </div>
+      <div class="row">
+    <div class="form-group aling-pers col-6" >
+     <label for="estado"><h6>Cambiar Estado:</h6></label>
+      </div>
+      <div class="col-5" >
+     <select class="form-control mt-2 p-2" name="estado" id="">
+      <option value="Aprobado">Aprobado</option>
+      <option value="No Aprobado">No Aprobado</option>
+     </select>
+     </div>
+      </div>
+     <input type="text" class="form-control mt-2 p-2" placeholder="Código de proceso" name="codProcces" value="{{codProcces}}" >
+     <input type="text-area" class="form-control mt-2 p-2" placeholder="Descripcion del proceso" name="descriProcces" value="{{descriProcces}}" >
+     <input type="text" class="form-control mt-2 p-2" placeholder="Observaciones" name="observProcces" value="{{observProcces}}" >
+     <button type="submit" class="btn btn-success m-2 " >Guardar</button>
+    <button type="button"  id="close-popup{{id}}" class=" close-popup btn btn-secondary m-2 " onclick="closePop({{id}}, 1)" >Cerrar</button>
+    </form>
+  </div>
+  </div>  
+</div>
+
+</td>
+         <td><a class="btn btn-outline-success m-2  col-md-8 {{envTintoreria}}" id="btnTinE{{id}}" onclick="openPop({{id}},2)">{{envTintoreria}}</a>
+
+         <div class="popup" id="popup-2{{id}}">
+  <div class="popup-content">
+   <div class="card p-2">
+      <div class="card-head text-auto">
+    <h4>Relación de envío corte a tintoreria</h4>
+    <h6><em>Ref: {{referencia}}</em></h6>
+    <h6><em>Nombre: {{Producto}}</em></h6>
+    <h6>Enviado: <em style="color: rgb(7, 98, 36);">{{envTintoreria}}</em> </h6>
+      </div>
+      <hr>
+    
+    <form action="/estados/envTinto" method="post">
+      <div class="row">
+      <div class="form-group aling-pers col-6">
+      <label for="fecha" ><h6>Fecha Enviado:</h6></label>
+      </div>
+      <div class="form-group col-6">
+     <input type="date" class="form-control mt-2 p-2" name="fecha" value="{{fechaEnvcorte}}" >
+     <input type="text" class="form-control mt-2 p-2" name="id" value="{{id}}" style="display: none;" >
+      </div>
+            </div>
+      <div class="row">
+    <div class="form-group aling-pers col-6" >
+     <label for="estado"><h6>Enviado?</h6></label>
+      </div>
+      <div class="col-5" >
+     <select class="form-control mt-2 p-2" name="envTintoreria" id="">
+      <option value="Si">Si</option>
+      <option value="No">No</option>
+     </select>
+     </div>
+      </div>
+     <input type="text" class="form-control mt-2 p-2" placeholder="Código de proceso" name="codProcces" value="{{codProcces}}" >
+     <input type="text-area" class="form-control mt-2 p-2" placeholder="Descripcion del proceso" name="descriProcces" value="{{descriProcces}}" >
+     <input type="text" class="form-control mt-2 p-2" placeholder="Observaciones" name="observProcces" value="{{observProcces}}" >
+     <button type="submit" class="btn btn-success m-2 " >Guardar</button>
+    <button type="button"  id="close-popup{{id}}" class=" close-popup btn btn-secondary m-2 " onclick="closePop({{id}},2)" >Cerrar</button>
+    </form>
+  </div>
+  </div>  
+</div>
+         
+         </td>
+         <td><a class="btn btn-outline-success {{recibidoTintoreria}} m-2 col-md-8"  onclick="openPop({{id}},3)" >{{recibidoTintoreria}}</a>
+          
+
+              <div class="popup" id="popup-3{{id}}">
+  <div class="popup-content">
+   <div class="card p-2">
+      <div class="card-head text-auto">
+    <h4>Información de Recibido de tintoreria</h4>
+    <h6><em>Ref: {{referencia}}</em></h6>
+    <h6><em>Nombre: {{Producto}}</em></h6>
+    <h6>Recibido: <em style="color: rgb(7, 98, 36);">{{recibidoTintoreria}}</em> </h6>
+      </div>
+      <hr>
+    
+    <form action="/estados/recibiTinto" method="post">
+      <div class="row">
+      <div class="form-group aling-pers col-6">
+      <label for="fecha" ><h6>Fecha Recibido:</h6></label>
+      </div>
+      <div class="form-group col-6">
+     <input type="date" class="form-control mt-2 p-2" name="fecha" value="{{fechaRecibiCorte}}" >
+     <input type="text" class="form-control mt-2 p-2" name="id" value="{{id}}" style="display: none;" >
+      </div>
+            </div>
+      <div class="row">
+    <div class="form-group aling-pers col-6" >
+     <label for="estado"><h6>Recibido?</h6></label>
+      </div>
+      <div class="col-5" >
+     <select class="form-control mt-2 p-2" name="recibidoTintoreria" id="">
+      <option value="Si">Si</option>
+      <option value="No">No</option>
+     </select>
+     </div>
+      </div>
+     <input type="text" class="form-control mt-2 p-2" placeholder="Código de proceso" name="codProcces" value="{{codProcces}}" >
+     <input type="text-area" class="form-control mt-2 p-2" placeholder="Descripcion del proceso" name="descriProcces" value="{{descriProcces}}" >
+     <input type="text" class="form-control mt-2 p-2" placeholder="Observaciones" name="observProcces" value="{{observProcces}}" >
+     <button type="submit" class="btn btn-success m-2 " >Guardar</button>
+    <button type="button"  id="close-popup{{id}}" class=" close-popup btn btn-secondary m-2 " onclick="closePop({{id}},3)" >Cerrar</button>
+    </form>
+  </div>
+  </div>  
+</div>
+         </td>
+
+         <td><a class="btn btn-outline-success m-2 {{terminacion}} col-md-8" onclick="openPop({{id}},4)">{{terminacion}}</a>
+         
+         <div class="popup" id="popup-4{{id}}">
+  <div class="popup-content">
+   <div class="card p-2">
+      <div class="card-head text-auto">
+    <h4>Información de Terminación</h4>
+    <h6><em>Ref: {{referencia}}</em></h6>
+    <h6><em>Nombre: {{Producto}}</em></h6>
+    <h6>Recibido: <em style="color: rgb(7, 98, 36);">{{recibidoTintoreria}}</em> </h6>
+      </div>
+      <hr>
+    
+    <form action="/estados/terminacion" method="post">
+      <div class="row">
+      <div class="form-group aling-pers col-6">
+      <label for="fecha" ><h6>Fecha enviado a terminación:</h6></label>
+      </div>
+      <div class="form-group col-6">
+     <input type="date" class="form-control mt-2 p-2" name="fecha" value="{{fechaTerminacion}}" >
+     <input type="text" class="form-control mt-2 p-2" name="id" value="{{id}}" style="display: none;" >
+      </div>
+            </div>
+      <div class="row">
+    <div class="form-group aling-pers col-6" >
+     <label for="estado"><h6>Recibido?</h6></label>
+      </div>
+      <div class="col-5" >
+     <select class="form-control mt-2 p-2" name="terminacion" id="">
+      <option value="Si">Si</option>
+      <option value="No">No</option>
+     </select>
+     </div>
+      </div>
+     <input type="text" class="form-control mt-2 p-2" placeholder="Código de proceso" name="codProcces" value="{{codProcces}}" >
+     <input type="text-area" class="form-control mt-2 p-2" placeholder="Descripcion del proceso" name="descriProcces" value="{{descriProcces}}" >
+     <input type="text" class="form-control mt-2 p-2" placeholder="Observaciones" name="observProcces" value="{{observProcces}}" >
+     <button type="submit" class="btn btn-success m-2 " >Guardar</button>
+    <button type="button"  id="close-popup{{id}}" class=" close-popup btn btn-secondary m-2 " onclick="closePop({{id}},4)" >Cerrar</button>
+    </form>
+  </div>
+  </div>  
+</div>
+         </td>
+
+         <td><a class="btn btn-outline-success m-2 col-md-8"  >{{porcentaje cantidadPrendas totalSalidas totalEntradas}}</a></td>         
+         </tr> 
+         
+            </div>
+ 
+ {{/each}}
+    </tbody>
+ </table>
+    </div>
+ </div>
+
+</div>
+</div>
+</div>
+<script>
+		window.onload=load(1,1,5);
+		</script>
+
+ <script type='text/javascript' src="/js/seguimiento.js"> </script> 

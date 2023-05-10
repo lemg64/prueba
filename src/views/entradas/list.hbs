@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row bg-dark text-light mt-2"><h3 class="text-center">Lista de Entradas</h3></div>
+  <div class="row">
+    <div class="col-1"><p>Filtrar por:</p></div>
+    <div class="col-2"> <select type="text" class="form-control " name="tipo" id="tipolist" onchange=""><option value="0"></option>{{#each tipo}}<option value="{{id}}">{{nombre}}</option> {{/each}}</select></div>
+    <div class="col-2"><input type="text"placeholder="Nombre"></div>
+    <div class="col-2"><input type="date"placeholder="Fecha"></div>
+    <div class="col-1"><a href="/filterBy/" class="btnp" style="height: 20px; " >Filtar</a></div>
+  </div>
+    <div class="row">
+  <table class="table">
+    <thead class="text-center">
+      <th class="col-1">Nro Doc</th>
+      <th>Fecha</th>      
+      <th class="col-1">Tipo</th>
+      <th>Nombre</th>
+      <th class="col-1" >Cantidad</th>
+     <th class="col-3" >Acciones</th>
+    </thead>
+    <tbody class="text-center">
+      {{#each listEntradas}}
+      <tr>
+        <td> {{ID}} </td>
+        <td id="date" data-fecha="{{fecha}}" > {{fecha}} </td>
+        <td>Satelite</td>
+        <td> {{nombre}} </td>
+        <td> {{cantidad}} </td>
+        <td ><a href="./view/{{ID}}"  target="_blank"><img src='..\\img\\view.jpg' alt='' height ='30' width='30'/></a><a href="./print/{{ID}}" class="p-2" target="_blank" ><img src='..\\img\\print.jpg' alt='' height ='30' width='30' /></a></td>
+        </tr>
+    
+      {{/each}}
+      
+    </tbody>
+
+  </table>
+  </div>
+</div>

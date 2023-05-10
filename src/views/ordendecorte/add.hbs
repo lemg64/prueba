@@ -1,0 +1,172 @@
+ <script type='text/javascript' src="/js/ordenDeCorte.js"> </script> 
+ 
+<div class="container mt-4 mb-4" id="container-add">
+    <form    id="">
+<body class="bg-light ">
+     <main style="">
+        <section class="row" >
+            <div class="" style="">
+               
+                <div class="card">
+                    <div class="card-header"> 
+                        <div class="row">
+                             <div id="">
+                             </div>
+                             <div class="card-title col-md-5">
+                            <h5>Orden de Corte</h5>
+                             </div>
+                                                                                               
+                        </div>
+                    </div>
+                                   
+                    <div class="card-body">
+                        <section class="row">
+                            <form >
+                               <div class="form-group col-md-2">
+                                <label for="col-md-4">Cortador:</label>
+                                <select type="text" class="form-control " name="tipo" id="cortador" onchange="cargarTelas(value)">
+                                     <option value="0">-Seleccione-</option>
+                                    {{#each cortadores}}
+                                    <option value="{{id}}">{{nombre}}</option>
+                                     {{/each}}
+                                </select>
+                                </div>
+                                    <div class="form-group col-md-4" id="nombreSat">
+                                <label class="form-group" for="nombre">Satelite:</label>
+                                <select type="text" class="form-control" id="nombre" name="nombre" onchange="addprecio(value)">
+                                    <option value="">-Seleccione-</option>
+                                       {{#each satelites}}
+                                         <option id="{{id}}" value="{{precio}}"  >{{nombre}} </option>
+                                       {{/each}}
+                                      </select>
+                                     </div>  
+                                     </form>
+                        </section>
+                                </div>
+                                <section class="row" >
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">                         
+                        <div class="card-title">
+                            <h5>Referencia Cortada</h5>
+                            </div>                  
+                    </div>
+                    <div class="card-body">
+                        <form class="row" id="formDatos">
+                               <div class="form-group col-md-2">
+                                <label for="">Referencia</label>
+                                 <select type="number" class="form-control " id="referencia" onchange="addDescripcion(value, dataset.value2)">
+                                   <option value="0"></option>
+                                   {{#each productos}}
+                                   <option id="{{id}}" value="{{nombre}}" itemid="{{id}}" data-value1="{{precioSatelite}}" data-value2="{{nombreSatelite}}" >{{referencia}}</option>
+                                   {{/each}}
+                                   </select>
+                            </div>                                    
+                            <div class="form-group col-md-1">
+                                <label for="">Cantidad</label>
+                                <input type="number" class="form-control" name="cantidad" id="cantidad"  onclick="calcularTotal()" data-prueba="255" onkeyup="calcularTotal()">
+                                </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Descripción</label>
+                                <input type="text" class="form-control" name="descripcion" id="descripcion">
+                                    </div>
+                                <div class="form-group col-md-2">
+                                <label for="" class="form-group col-12">Observaciones</label>
+                                <input type="text" class="form-control" name="observaciones" id="observaciones">
+                                </div>
+                                 <div class="form-group col-md-1">
+                                <label for="precio">Precio:</label>
+                                <input type="text" class="form-control" name="precio" id="precio" placeholder="" onchange="calcularTotal()" onkeyup="calcularTotal()">
+                                </div>
+                                <div class="form-group col-md-2">
+                                <label for="">Valor Corte:</label>
+                                <input type="text" class="form-control" name="vlrCorte" id="vlrCorte" placeholder="" disabled="disabled">
+                                </div>
+                                
+                                <p id="txtValidador" style="color:red"></p>
+                                   </div>
+                                </div>
+                            </section>
+                             </form>
+                             <form class="row" id="formTelas">
+                            <div class="form group row card-body m-1">
+                                <div class="col-md-3 form-group">
+                                    <label for="tela">Nombre Tela</label>
+                                <select type="number" class="form-control " id="tela" onchange="saldoTelas()">
+                                   <option value="0"></option>
+                                   {{#each telas}}
+                                   <option id="{{id}}" value="{{id}}">{{nombre}}</option>
+                                   {{/each}}
+                                   </select>
+                                </div>
+                                 <div class="col-md-2 form-group">
+                                  <label for="cantidad" class="col-12">Mtrs Cortados</label>
+                                <input class="form-control" type="text" id="mtrsCortados" onkeyup="calcMtrsCortados()" onchange="calcMtrsCortados()">
+                                </div>
+                                  <div class="col-md-2 form-group">
+                                    <label for="promedio">Promedio:</label>
+                                <input class="form-control" type="text" disabled="disabled" id="promedio">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="saldo">Saldo:</label>
+                                <input class="form-control" type="text" id="saldo" disabled="disabled">
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="saldo">Nvo Saldo:</label>
+                                <input class="form-control" type="text" id="nvoSaldo" disabled="disabled">
+                                </div>
+                                 <div class="col-md-2 form-group">
+                                    <label for="saldo" class="col-12">Observaciones:</label>
+                                <input class="form-control" type="text" id="observacionesTela">
+                                </div>
+                                 <div class="col-md-1 form-group">
+                                <button type="reset" class="btn btn-primary mt-4" id="btn-Oc" onclick="agregarDatos()">Agregar</button>
+                                
+                                </div>                                
+                            </div>
+                             
+                                   
+
+                               <div class="card"></div>
+                                    <section class="row mt-4">
+                                        <div class="col">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h5>Relación de Telas</h5>
+                                                   </div>
+                                                </div>
+                                                   <div class="col" id="detalle">
+                                                    <table class="table" id="dataTable">
+                                                  <thead class="text-center">
+                                                    
+                                                    <tr>                                                       
+                                                        <th>Tela</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Promedio</th>
+                                                        <th>Nvo Saldo</th>
+                                                        <th>Observaciones</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                         </thead>                                                                                                    
+                                                    </div>                          
+                                            </table>  
+                                        </div>                                        
+                                             <section>                                                
+                                           <div class="card-header d-flex flex-row-reverse bd-highlight" id="total" name="cantidad"> <h4></h4> </div>
+                                               
+                                        </section>          
+                                         <div class="col-md-3 mt-2 mb-4 mx-5 ms-auto">                                         
+                                          
+                                       <button type="button" class="btn btn-success float-right" id="save" onclick="sendBackend('./add')">Generar Orden de Corte</button>
+                                        
+                                    </div>                                
+                                  </div>
+                               </div>  
+                               </section>  
+                  </main>    
+           </form>
+           {{!-- <script>load()</script> --}}
+          
+</body>
+</div>
+

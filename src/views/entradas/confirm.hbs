@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <form action="" method="post">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h2>Confirma la Entrada</h2>
+            </div>
+            <div class="row">
+                <div class="table">
+                    <table class="table">
+                        <thead>
+                            
+                            <th>Referencia</th>
+                            <th>Cantidad</th>
+                            <th>Descripción</th>
+                        </tr>
+                        </thead>
+                    {{#each datos}}
+                    <tr>
+                    <td>
+                       {{referencia}}
+                    </td>
+                    <td>
+                        {{cantidad}}
+                    </td>
+                    <td>
+                        {{descripcion}}
+                    </td>
+                    </tr>
+                    {{/each}}
+                    </table>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3>Cantidad Total: {{sumall}} </h3>
+                <button class="btn btn-success">Confirmar</button>
+                <a href="/" class="btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>

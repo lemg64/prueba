@@ -1,0 +1,89 @@
+<div class="container">
+    <h1>Reporte General</h1> <div id="btnFilter">
+        
+      </div>
+    <table class="table">
+        <thead>
+        
+        <th>Tipo Usuario</th>
+        <th>Nombre</th>
+        <th>Cantidad Salida</th>
+        <th>Cantidad Entrada</th>
+        <th>Saldo</th>
+        <th>Filtrar</th>
+    </thead>
+     <div class=""  >
+    <tbody id="contentReport" >
+        
+        {{#each dataResultF}}
+        <tr>                  
+        <td> {{ this.0.Tipo }} </td>
+        <td> {{this.0.nombre}} </td>
+        <td> {{this.0.totalSalida}} </td>
+        <td> {{this.0.totalEntrada}} </td>
+        <td>{{this.0.Saldo}}</td>
+        <td><button id="open-popup{{this.0.ID_De}}" data-popup="popup-{{this.0.ID_De}}" class=" open-popup btn btn-outline-primary btn-sm" onclick="openPopReport({{this.0.ID_De}})" >Ver</button>
+        <div class="popup" id="popup-{{this.0.ID_De}}">
+  <div class="popup-content">
+   <div class="card p-2">
+      <div class="card-head">
+    <h2>Detalle de Movimientos</h2>
+          </div>
+
+           <table class="table">
+            <thead>
+                <th>Num Doc</th>
+                <th>Tipo Doc</th>
+                <th>Referencia</th>
+                <th>Descripcion</th>
+                <th>Salidas</th>
+                <th>Entrada</th>
+            </thead>           
+            <tbody>
+                 
+                 
+                {{#each this}}  
+                <div class="krdex{{this.nombre}}" >
+                <tr class="i{{this.id}}" >
+                    <td> {{this.NumDocumento}}</td>
+                    <td> {{this.TipoDoc}} </td>
+                    <td> {{this.referencia}} </td>
+                    <td> {{this.nomProduct}} </td>
+                    <td> {{this.cantidadSalida}} </td>
+                    <td> {{this.cantidadEntrada}} </td>
+                    
+                </tr>
+                </div>
+                {{/each}}    
+                
+
+                 
+            </tbody>
+        
+               
+           
+             </table>
+              <button class="btn btn-success m-1" >Descargar</button>
+                <button class="btn btn-success m-1" >Imprimir</button>
+                <button  class="btn btn-secondary" onclick="closePopReport({{this.0.ID_De}})" >Cerrar</button>
+    
+  </div>
+  </div>
+</div> </td>
+        </tr>
+         
+         
+        {{/each}}
+    </tbody>
+</div>
+    </table>
+    
+    
+                
+   
+</div> 
+
+
+
+
+{{!-- <script>window.onload(datos())</script> --}}

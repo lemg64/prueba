@@ -1,0 +1,105 @@
+
+<div id="nav" style="background-color: rgb(10, 186, 186);" class="col-2" >
+   <div class="titulonav text-center">
+   <h3><em>Menú</em></h3>
+   </div>
+   
+   <div class="cuerporec" style="">
+   {{#if user}}
+          <li class="nav-item">
+          <a class="nav-link active text-dark" aria-current="page" href="/estados">Seguimiento</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu text-dark" aria-labelledby="">
+            <li><a class="dropdown-item" href="../../../../../productos/add" target="_blank" >Agregar Nuevo</a></li>
+            
+            <li><a class="dropdown-item" href="../../../../../productos/list">Lista de Productos</a></li> 
+            <li><h
+            <li><a class="dropdown-item" href="../../../../../telas">Agregar Telas</a></li>
+            
+            <li><a class="dropdown-item" href="../../../../../telas/list">Lista de Telas</a></li>
+            
+            <li><a class="dropdown-item" href="../../../../../ingresotelas">Ingreso de Telas</a></li>
+            
+            
+             </ul>
+            </li>         
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Orden de Corte
+          </a>
+          <ul class="dropdown-menu tdark" aria-labelledby="../entradas/list">
+            <li><a class="dropdown-item" href="../../../../ordendecorte/add">Agregar Nueva</a></li>
+             
+            <li><a class="dropdown-item" href="../../../../../ordendecorte/list">Lista de Ordenes</a></li>          
+              </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Entradas
+          </a>
+          <ul class="dropdown-menu text-dark" aria-labelledby="http://localhost:4000/entradas/list">
+            <li><a class="dropdown-item" href="../../../../../entradas">Agregar Nueva Entrada</a></li>
+            
+            <li><a class="dropdown-item" href="../../../../../entradas/list">Lista de Entradas</a></li>
+           
+        
+            </li>
+            
+          </ul>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Salidas
+          </a>
+          <ul class="dropdown-menu text-dark" aria-labelledby="http://localhost:4000/entradas/list">
+            <li><a class="dropdown-item" href="../../../../../salidas">Agregar Nueva Salida</a></li>
+            
+            <li><a class="dropdown-item" href="../../../../../salidas/list">Lista de Salidas</a></li>
+            
+          </ul>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorias
+          </a>
+          <ul class="dropdown-menu text-dark" aria-labelledby="">
+            <li><a class="dropdown-item" href="../../../../../categorias">Agregar Nueva Categoría</a></li>
+            
+            <li><a class="dropdown-item" href="../../../../../categorias/list">Lista de Categorías</a></li>
+            
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuarios
+          </a>
+          <ul class="dropdown-menu text-dark" aria-labelledby="">
+            <li><a class="dropdown-item" href="../../../../../responsables">Agregar Usuarios</a></li>
+            
+             <li><a class="dropdown-item" href="../../../../../responsables/list">Lista de Usuarios</a></li>
+            
+             <li><a class="dropdown-item" href="../../../../../proveedores">Agregar Proveedores</a></li>
+            
+            <li><a class="dropdown-item" href="../../../../../proveedores/list">Lista de Proveedores</a></li>
+            
+            
+            
+          </ul>
+        </li>
+              
+       <li class="nav-item">          
+          <a class="nav-link text-dark" href="/logout">Cerrar Sesión</a>
+        </li>
+
+        {{/if}}
+        
+              </ul>
+   </div>
+</div>

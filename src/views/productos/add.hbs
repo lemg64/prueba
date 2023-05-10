@@ -1,0 +1,68 @@
+
+<div class="container p-4 m-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h3>Nuevo Producto</h3>
+                    <form action="/productos/add" method="post">
+                    <select name="condicion" id="" class="form-control m-4">
+                        <option value="0">Existente</option>
+                        <option value="1">Nuevo</option>
+                                            </select>
+                    <div class="form-group">
+                        <input type="text" class="form-control m-4" name="nombre" placeholder="Nombre" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="referencia" class="form-control m-4" placeholder="Referencia">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-12" >Categoria:</label>
+                    <select name="categoriaId" id="" class="form-control m-4">
+                        <option value="0">-Seleccione-</option>
+                        {{#each categorias}}
+                        <option value="{{id}}">{{nombre}}</option>
+                          {{/each}}
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="precio" class="form-control m-4" placeholder="Precio">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="" class="form-group col-12" >Nombre Tela:</label>
+                    <select name="telaId" id="" class="form-control m-4">
+                        <option value="0">-Seleccione-</option>
+                        {{#each telas}}
+                        <option value="{{id}}">{{nombre}}</option>
+                          {{/each}}
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="satelite" class="col-12">Nombre Satelite: </label>
+                        <select name="sateliteId" id="satelite" class="form-control m-4">                            
+                        <option value="0">-Seleccione-</option>
+                        {{#each satelites}}
+                        <option value="{{id}}">{{nombre}}</option>
+                          {{/each}}
+                    </select>
+                    
+                    </div>
+                    
+                       <div class="form-group">
+                        </div>      
+                        <div class="d-grid gap-2">                
+                    <button class="btn btn-success btn-block">
+                            Guardar
+                        </button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+  
+</div>

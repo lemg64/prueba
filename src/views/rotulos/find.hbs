@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="card m-2">
+        <div class="card-header"><h3>Buscar datos para Guía</h3></div>
+    
+    <div class="card-body">
+       
+            <div class="row">  
+    <div class="col-lg-2 col-md-12 m-2 "><label for=""><h6>Nit/Nombre:</h6></label></div>
+    <div class="col-lg-2  col-md-12 m-2"><h6><Input name="nit" id="nit" placeholder="Ej. 1234/Luis" ></Input></h6></div>
+    <div class="col-lg-2  col-md-12 m-2"><h6>Notas de la Entrega:</h6></div>
+    <div class="col-lg-2 col-md-12  m-2"> <textarea name="" id="notaBussi" cols="30" rows="4" placeholder="Ingrese las notas de la entrega" >Por favor entregar atrás del mostrador y a personal autorizado!!</textarea> </div>
+  </div>
+  <button type="button" class="btn btn-success" onclick="finduser()">Buscar</button>
+</div>
+
+            
+            
+        
+    </div>
+
+    <div>
+        
+    </div>
+    </div>
+    <div class="card" >
+        <div class="card-header text-center"><h5>Datos Encontrados</h5></div>
+
+        <div class="card-body" >
+           <table class="table text-center">
+            <th class="col-3">Nombre</th>
+            <th class="col-1">Nit</th>
+            <th class="col-4">Direccion</th>
+            <th class="col-2">Ciudad</th>
+            <th class="col-2" >  Acciones</th>
+            <tbody id="users">
+                
+            </tbody>
+           </table>
+
+        </div>            
+
+        </div>
+
+</div>
+
+<script type="text/javascript" src="/js/rotulos.js" ></script>

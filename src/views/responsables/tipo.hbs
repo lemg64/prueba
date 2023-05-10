@@ -1,0 +1,28 @@
+<body>
+    
+
+<div class="container p-4" id="container-login" >
+<div class="card  col-sm-9 col-lg-3 col-md-6 col-lg-5 col-xl-4 mt-10 mx-auto">
+    <div class="card-header text-center">
+        <div class="card-title">
+        <h3>Agregar Tipo de Usuario</h3>
+        </div>
+    </div>
+    <div class="card-body" style="text-align:center;">
+        <form action="/responsables/addTipo" method="POST" class="mt-4">        
+        <div class="m-4">
+        <input type="username" name="nombre"  class="form-control" placeholder="Tipo de usuario">
+        </div>
+        <div class="m-4">
+        <input type="text" name="Descripcion" class="form-control" placeholder="Describe el rol de tipo de usuario">
+        </div>
+        
+        <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-block" >Crear tipo de usuario</button>
+       
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+</body>

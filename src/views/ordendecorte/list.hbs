@@ -1,0 +1,39 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+    <h4>Consolidado Órdenes de Corte</h4>
+        </div>
+        <div class="detalle-tb">
+        <div class="card-body ">
+      <table class="table table-striped table-hover">
+         <thead style="">
+             <th>Id</th>
+             <th>Satélite</th>
+             <th>Referencia</th>
+             <th>Cantidad</th>
+             <th>Acciones</th>
+        </thead>
+       
+        
+        {{#each listOrdenCorte}}
+        <tbody class="">
+            <td>{{id}}</td>
+            <td>{{idSatelite}}</td>
+            <td>{{idProducto}}</td>
+            <td>{{cantidadPrendas}}</td>
+            <td>
+                <a class="btn btn-primary m-2" id="{{id}}" href="">Ver</a>
+                <a class="btn btn-danger m-2" href="">Eliminar</a>
+                
+            </td>
+        </tbody>
+        {{/each}}
+</table>
+        </div>
+      
+        </div>
+        <div class="card-footter">
+            
+        </div>
+    </div>
+</div>

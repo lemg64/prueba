@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each telas}}
+         <div class="col-md-3 mt-2">
+            <div class="card text-center">
+                <div class="card-header">
+                     <h5 class="card-title text-uppercase">
+                        {{nombre}}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <h6>Descripción:</h6>
+                    <p> {{descripción}}</p>
+                    <h6>Composición:</h6>
+                    <p> {{composición}} </p>
+                   <div class="card-footer">
+                    <a href="/telas/edit/{{id}}" class="btn btn-success">Editar</a>
+                    <a href="/telas/eliminar/{{id}}" class="btn btn-danger">Eliminar</a>
+                   </div>
+                </div>
+            </div>
+         </div>
+         {{else}}
+         <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center m-4 mb-5">
+                <h4 class="mb-5" >No hay telas creadas aún!!</h4>
+                <a class="btn btn-primary" href="../telas">Crea una.. </a>
+            </div>
+         </div>
+        {{/each}}
+    </div>
+
+</div>

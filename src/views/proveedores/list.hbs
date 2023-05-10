@@ -1,0 +1,31 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each listproveedores}}
+         <div class="col-md-3 mt-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-title text-uppercase">
+                        {{nombre}}
+                    </h4>
+                    <h6> {{nit}}</h6>
+                    <h7> Asesor: {{asesor}}</h7>
+                    <p>Teléfono: {{telefono}}</p>
+                    <p>Dirección: {{direccion}}</p>
+                    <p>Ciudad: {{ciudad}}</p>
+                    <p>{{correo}}</p>
+                    <a href="/proveedores/editar/{{id}}" class="btn btn-secondary">Editar</a>
+                    <a href="/proveedores/eliminar/{{id}}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+         </div>
+         {{else}}
+         <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>Aun no hay proeveedores creados aún!!</p>
+                <a href="../proveedores">Crea uno.. </a>
+            </div>
+         </div>
+        {{/each}}
+    </div>
+
+</div>

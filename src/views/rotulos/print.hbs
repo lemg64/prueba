@@ -1,0 +1,55 @@
+<div class="container" style="background-color: rgb(255, 255, 255);" >
+    <div class="areaPrint" style="margin: auto;" >
+         <div class="row m-0"  > 
+            <div class="col text-center "><img src="/img/logo-color.png" alt=""  style=" margin-top:-0px; width:120px; height:50px; float:right;"></div>
+         </div>
+           <div style="margin-top:-40px;">
+         <div class="row m-0" > 
+            <h6 style="" >Destinatario:</h6>
+            
+            <div class="col- pg"> 
+              <p class="pg">Nombre: {{dataRot.name}}</p>
+              <p class="pg">Direccion:{{dataRot.address.address}} </p>
+              <p class="pg">Teléfono: {{dataRot.phonePrimary}} - {{dataRot.mobile}}  </p>
+              <p class="pg">Ciudad: {{dataRot.address.city}} - {{dataRot.address.department}} </p>
+              <p class="pg" >Nit. {{dataRot.identification}}  </p>
+                          </div>
+                      
+         
+         </div>
+
+            <hr class="hrdiv">
+            <div>
+               <div class="row">
+               <p class="pg pcoment" >Notas: <em class="emComent" >{{notaCliente}}</em> </p>
+               </div>
+            </div>
+            <hr class="hrdiv">
+
+         <div class="row m-0"> 
+            <h6 style="margin-top: 2px; " >Remitente:</h6>
+            <div class="col-7 pg"> 
+              <p class="pg">Nombre: Jorge Ivan Salazar</p>
+              <p class="pg">Direccion: Cra 13 N 13-17 Ofc 1101</p>
+              <p class="pg">Teléfono: 3174237984</p>
+              <p class="pg">Ciudad: Bogotá D.C.</p>
+              <p class="pg" >Nit: 7560127</p>
+            </div>
+               <div class="col-5" style="margin-top: -18px;" >
+                <div class="notasBus" >
+            <h5 class="contNotas text-center" > Num de Cajas</h5> 
+                  </div>
+                  <div class="v-lin text-center">
+                     <div>
+                     <h5 style="margin-top: 10px;">De</h5> 
+                     </div>
+                  </div>
+            </div>
+         
+         </div>
+      <hr class="hrdiv" >
+         
+           </div>
+    </div>
+</div>
+<script>window.print()</script>

@@ -1,0 +1,64 @@
+{{#each pedidos}}
+<div class="row m-2">
+ 
+    <div class="col-4">
+        
+        <div class="text-center title-order"><h6>Datos del Pedido</h6></div> 
+        
+        <hr>
+        <div><p>Pedido Nº:<em> {{id}}</em></p></div>
+        <div><p>Nombre:<em data-name="{{billing.first_name}}"> {{billing.first_name}} {{billing.last_name}} </em></p></div>
+        <div><p>Cédula:<em id="nit" value="" > {{meta_data.3.value}}</em></p></div>
+        <div><p>Teléfono:<em> {{billing.phone}}</em></p></div>
+        <div><p>Ciudad:<em> {{billing.city}}-{{billing.state}} </em></p></div>
+        <div><p>Direccion:<em> {{shipping.address_1}} </em> </p></div>
+        <div><p>Medio de pago: <em>{{payment_method_title}}</em> </p></div>
+        <div><p>Transaccíon Id: <em>{{transaction_id}}</em> </p></div>
+        <div><p>Nota del Cliente:</p><p>{{customer_note}}</p></div>
+        <div><p>Detalle del Pedido:</p></div>
+        {{#each this.line_items }}
+        <div><em style="color:rgb(15, 64, 107); font-size:14px; " > {{this.quantity}} - {{this.name}}  Ref {{this.sku}}  x {{this.price}} </em></div> 
+        {{/each}}
+        <div><p>Costo del Envío: {{shipping_total}}</p> </div>
+        <div><h6>Valor Total: {{total}} </h6></div>
+    </div>
+    <div class="col-4">
+        <div class="text-center title-order" ><h6>Datos de Envío</h6></div>
+        <hr>
+        <div class="row mb-2">
+    <div class="col-4" ><p>Transportadora:</p></div>
+    <div class="col-4" > <p><select name="" id="">
+        <option value="">-Seleccione-</option>
+        <option value="">Interrapidisimo</option>
+        <option value="">Servientrega</option>
+        <option value="">Domicilio</option>
+        <option value="">Otro</option>
+    </select> 
+    </p>
+    </div>
+        </div>
+        <div class="row">
+    <div class="col-4" ><p>Nro Guía: </p> </div> 
+    <div class="col-5 nroguia "><p><input type="text" placeholder="Num Guia" ></p></div> 
+    <div class="col-3"><button class="btn-guia" >Guardar</button></div>
+    <div class="col-3"> <a href="https://api.whatsapp.com/send/?phone=573053171350&text=https://www.interrapidisimo.com/sigue-tu-envio/?guia=700096740206&type=phone_number&app_absent=0" class="btn btn-success" target="_blank" >Enviar</a> </div>
+    
+        </div>
+    </div>
+
+    <div class="col-4 " >
+        <div class="text-center title-order" ><h6>Estado del Pedido</h6></div>
+        <hr>
+   <div><p>Detalle:</p></div>
+
+    </div>
+  
+</div>
+<div class="m-4">
+<button class="btn btn-primary" >Facturar</button> <button class="btn btn-secondary" onclick="finduser2({{meta_data.4.value}})" > Guias </button> <button class="btn btn-primary" >Facturar</button> <button class="btn btn-secondary" > Guias </button>
+</div>
+<hr>
+{{/each}}
+
+
+<script type="text/javascript" src="/js/findUser.js"  ></script>

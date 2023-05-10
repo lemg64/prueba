@@ -1,0 +1,119 @@
+<script type="module" src="/js/print_Oc.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.7.0/build/pdf.min.js"></script>
+<script></script>
+
+
+ <div class="containe text-center" style="background-color: #ffff;" id="area">
+  <div class="row align-items-start">
+    <div class="col">
+      <img src="/img/logo-color.png" alt="" width="100%" height="70%" style="margin-top: -25px;">
+    </div>
+    <div class="col" style="margin-top: -12px;">
+      <div class="row"><h7>Jorge Ivan Salazar Ramirez</h7></div>
+      
+      <div class="row"><h7>Cra 13 # 13-17 Ofi. 1101</h7></div>
+      <div class="row"><h7>Tel. 2820735</h7></div>
+     
+    </div>
+    <div class="col" style="margin-top: -25px;" >
+      
+      <h5>ORDEN DE CORTE</h5>
+      <H5 style="margin-top: -15px;">Nro. {{consecutivo}}</H5>
+      
+    </div>
+  </div>
+
+
+<div class="container" id="postHeade">  
+  <div class="row align-items-start" style="margin-top:-15px; margin-bottom: 10px;">
+    <div class="head-cort border-left col-2" id="" style="" >
+        <div class="content-head"  id="" > <strong>Cortador:</strong> </div>
+      <div class="content-head" id=""> <strong>Telefono:</strong></div>
+        </div>
+    
+    <div class="col-3">      
+      <div class="row" style="padding-left: 5px;" id="contentHead"> {{nameCortador}} </div>
+      <div class="row" style="padding-left: 5px;" id="contentHead"> {{telefonoCortador}} </div>
+       </div>
+       <div class="col-3">      
+      <div class="row head-cort" style="padding-left: 5px;" id="contentHead"> <strong> FECHA</strong></div>
+      <div class="row" style="padding-left: 5px;" id="contentHead"> <p id="date" data-fecha="{{fecha}}"> {{fecha}} </p> </div>
+       </div>
+       <div class="col-4">      
+      <div class="row head-cort text-center border-right" style="padding-left: 5px;" id="contentHead"> <strong> CANTIDAD </strong></div>
+      <div class="row" style="padding-left: 5px;" id="contentHead"><strong> {{cantidad}} </strong> </div>
+       </div>
+             
+               <div class="head-cort col-2" id="" style="" >
+        <div class="content-head"   > <strong>Satelite:</strong> </div>
+      <div class="content-head" > <strong>Telefono:</strong></div>
+        </div>
+    
+    <div class="col-3">      
+      <div class="row" style="padding-left: 5px;" id="contentHead"> {{nameSatelite}} </div>
+      <div class="row" style="padding-left: 5px;" id="contentHead"> {{telefonoSatelite}} </div>
+       </div>
+
+       <div class="col-3">      
+      <div class="row head-cort" style="padding-left: 5px;" id="contentHead"> <strong> REFERENCIA </strong></div>
+      <div class="row" style="padding-left: 5px;" id="contentHead"> <strong> {{referenciaProducto}} </strong> </div>
+       </div>
+       <div class="col-4">      
+      <div class="row head-cort text-center" style="padding-left: 5px;" id="contentHead"> <strong> DESCRIPCIÓN</strong></div>
+      <div class="row" style="padding-left: 5px;" id="contentHead"><strong> {{nameProducto}} </strong> </div>
+       </div>
+
+       </div>
+
+      </div>
+         
+        
+
+     <div class="divTableOc">
+     <table class="tabla">
+      <thead>
+        <tr>
+      <th>Cantidad (Mtrs)</th>
+      <th class="col-4">Nombre Tela</th>
+      <th class="">Promedio</th>
+      <th>Saldo</th>
+      <th>Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        {{#each datosDetail}}
+        <tr class="headt">
+          
+          <td> {{cantidadtela}} </td>
+          <td>{{nameTela}}</td>
+          <td>{{promedio}}</td>
+          <td>{{sumarDoc totalIngresado totalCortado}}</td>
+          <td>{{observaciones}}</td>
+        </tr>
+        {{/each}}
+        
+      </tbody>
+            </table>
+     </div>
+            <div class="card-head" id="totalUnid" data-totalM='{{cantidad}}'>Total Unds: <strong id="">{{cantidad}}</strong> </div>
+          </div>
+              <br>
+           <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+      <hr class="divFirm"></hr>
+      Cortado por:
+    </div>
+    
+    <div class="col">
+      <hr class="divFirm"></hr>
+      Firma Satélite
+    </div>
+  </div>
+</div>
+  
+</div>
+
+<hr size="8px">
+

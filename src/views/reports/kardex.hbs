@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Kardex</h1> <div id="btnFilter">
+        
+      </div>
+    <table class="table">
+        <thead>
+        <th>Numero de Documento</th>
+        <th>Documento</th>
+        <th>Tipo Usuario</th>
+        <th>Nombre</th>
+        <th>Referencia</th>
+        <th>Producto</th>
+        <th>Cantidad Salida</th>
+        <th>Cantidad Entrada</th>
+        <th>Saldo</th>
+        <th>Filtrar</th>
+    </thead>
+     <div class=""  >
+    <tbody id="contentReport" >
+        
+        {{#each reportKardex}}
+        <tr>
+        <td> {{'Num Documento'}} </td>
+        <td> {{TipoDoc}}</td>
+        <td> {{ 'Tipo User' }} </td>
+        <td> {{nombre}} </td>
+        <td> {{ referencia }} </td>
+        <td>{{'Nom Product'}}</td>
+        <td> {{cantidadSalida}} </td>
+        <td> {{cantidadEntrada}} </td>
+        <td>{{Saldo}}</td>
+        <td><button class='btn btn-outline-success btn-sm' onclick="filterByName('{{nombre}}')" >Filtrar</button> </td>
+    
+
+        
+    </tr>
+    {{/each}}
+        
+    </tbody>
+</div>
+    </table>
+</div> 
+<script type="text/javascript" src="/js/filterKardex.js" ></script>
+<script>window.onload(datos())</script>

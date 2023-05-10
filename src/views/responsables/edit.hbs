@@ -1,0 +1,101 @@
+<div class="section">
+    <div class="row">
+        <div class="col-md-4 mt-4 p-0">
+           <div class="card">
+            <div class="card-header text-center">
+                <h4>Editar Usuario</h4>
+            </div>
+            <div class="form m-4">
+                <form action="./{{datosEdit.id}}" method="POST">
+                     <div class="m-2">
+                    <label for="idTipo" >Tipo de Responsable:</label>
+                    <select name="idTipo" id="tipo" class="form-control" text-transform="uppercase">
+                        <option value="{{nombreTipo.id}}">{{nombreTipo.nombre}}</option>
+                         {{#each tipo}}
+                        <option value="{{id}}">{{nombre}}</option>
+                        {{/each}}
+                    </select>
+                    </div>
+                    
+                    <div class="m-2">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" value="{{datosEdit.nombre}}">
+                    </div>
+                     <div class="m-2">
+                    <label for="nombre">Nit/Cédula:</label>
+                    <input type="text" class="form-control" name="nit" value="{{datosEdit.nit}}" >
+                    </div>
+                     <div class="m-2">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" class="form-control" name="telefono" value="{{datosEdit.telefono}}" >
+                    </div>
+                     <div class="m-2">
+                    <label for="telefono2">Teléfono2:</label>
+                    <input type="text" class="form-control" name="telefono2" value="{{datosEdit.telefono2}}" >
+                    </div>
+                     <div class="m-2">
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" class="form-control" name="direccion" value="{{datosEdit.direccion}}" >
+                    </div>
+                     <div class="m-2">
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" class="form-control" name="ciudad" value="{{datosEdit.ciudad}}" >
+                    </div>
+                     <div class="m-2">
+                    <label for="correo">Correo:</label>
+                    <input type="text" class="form-control" name="correo" value="{{datosEdit.correo}}" >
+                    </div>
+                     <div class="m-2">
+                    <label for="referenciadoPor">Referenciado Por:</label>
+                    <input type="text" class="form-control" name="referenciadopor" value="{{datosEdit.referenciadoPor}}" >
+                    </div>
+                     <div class="m-2">
+                    <label for="precio">Precio:</label>
+                    <input type="text" class="form-control" name="precio" value="{{datosEdit.precio}}" >
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-block">Editar</button>
+        <button class="btn btn-secondary btn-block">Salir</button>
+        </div>
+                </form>
+               
+            </div>
+           </div>
+        </div> 
+        <div class="col-md-8 mt-4 p-0">
+            <div class="card">
+                <div class="card-header text-center">
+                   <h4>Lista de Talleres</h4>
+                </div>
+             <div class="card-body col-md-12">
+                <div class="detalle-tb-2">
+                    <table class="table table-striped">
+                        <thead class="text-center">
+                         <th>Nombre</th>
+                         <th>Teléfono</th>
+                         <th>Dirección</th>
+                         <th>Ciudad</th>
+                         <th>Precio</th>
+                         <th>Acciones</th>
+                        </thead>
+                         <tbody class="text-center">
+                            {{#each satelites}}
+                            <tr>
+                                <td>{{nombre}}</td>
+                                <td> {{telefono}} </td>
+                                <td> {{direccion}} </td>
+                                <td> {{ciudad}} </td>
+                                <td>{{precio}}</td>
+                                <td><a href="../edit/{{id}}" class="btn btn-primary m-2" >Editar</a></td>
+                            </tr>
+                            {{/each}}
+                         </tbody>
+</table>
+                </div>
+             </div>
+
+            </div>
+        </div>       
+    </div>
+</div>

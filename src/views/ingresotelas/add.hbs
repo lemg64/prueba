@@ -1,0 +1,130 @@
+<div class="container mt-4 mb-4" id="container-add">
+    <form    id="">
+     <body class="bg-light ">
+      <main style="">
+        <section class="row" >
+         <div class="" style="">               
+             <div class="card">
+               <div class="card-header"> 
+                 <div class="row">
+                  <div class="card-title">
+                    <div class="card-header ">
+                     <h5>Ingreso de telas</h5>
+                    </div>
+                    </div>
+                 </div>     
+                    <div class="card-body">
+                        <section class="row"  >
+                            <form >
+
+                               <div class="form-group col-md-2">
+                                <label for="col-md-4">Agencia:</label>
+                                 <select type="text" class="form-control " name="agencia" id="agencia" onchange="">
+                                 <option value="0">-Seleccione-</option>                                    
+                                    {{#each agencias}}
+                                 <option value="{{id}}">{{nombre}}</option>                                   
+                                    {{/each}}
+                                  </select>
+                               </div>
+
+                               <div class="form-group col-md-3">
+                                 <label for="cortador">Nombre Cortador:</label>
+                                 <select type="" class="form-control " id="cortador" onchange="">
+                                 <option value="0">-Seleccione-</option>
+                                   {{#each cortador}}
+                                 <option id="{{id}}" value="{{id}}">{{nombre}}</option>
+                                   {{/each}}
+                                 </select>
+                                </div>
+
+                               <div class="form-group col-md-2" id="nombreSat">
+                                <label class="form-group" for="nombre">Nro. Documento:</label>                                 
+                                <input type="number" id="documento" class="form-control">
+                               </div>      
+
+                               <div class="form-group col-md-2" id="nombreSat">
+                                <label class="form-group" for="nombre">Fecha:</label>                                 
+                                <input type="date" id="fecha" class="form-control">
+                               </div>
+                               <p id="txtValidadorHeader" style="color:red; margin-top: 5px;"></p>                                                                      
+                            </form>
+                          </section>
+                          </div>
+
+         <section class="row" >
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">                         
+                        <div class="card-title">
+                            <h5>Detalle Documento</h5>
+                            </div>                  
+                    </div>
+                    <div class="card-body">
+                        <form class="row" id="formDatos">
+                               <div class="form-group col-md-2">
+                                <label for="">Nombre Tela:</label>
+                                 <select type="number" class="form-control " id="nombreTela" onchange="">
+                                   <option value="0">-Seleccione-</option>
+                                   {{#each tela}}
+                                   <option id="{{id}}" value="{{id}}">{{nombre}}</option>
+                                   {{/each}}
+                                   </select>
+                            </div>                                    
+                            <div class="form-group col-md-2">
+                                <label for="">Cantidad</label>
+                                <input type="number" class="form-control" name="cantidad" id="cantidad">
+                                </div>                                                             
+                                <div class="form-group col-md-3">
+                                <label for="">Observaciones</label>
+                                <input type="text" class="form-control" name="observaciones" id="observaciones">
+                                </div>
+                                
+                                <div class="form-group col-md-2">
+                                    <button type="reset" id="boton" class="btn btn-primary mt-4" onclick="agregarDatos()">Agregar</button>
+                                                                       
+                                   </div> 
+                                <p id="txtValidador" style="color:red; margin-top: 5px;"></p>
+                                   </div>
+                                </div>
+                            </section>
+                               <div class="card"></div>
+                                    <section class="row mt-4">
+                                        <div class="col">
+                                            <div class="card-header">
+                                                <div class="card-title text-center">
+                                                    <h6>Lista de Elementos</h6>
+                                                   </div>
+                                                </div>
+                                                   <div class="col" id="detalle">
+                                                    <table class="table" id="dataTable">
+                                                  <thead class="text-center">
+                                                    
+                                                    <tr>                                                       
+                                                        <th>Nombre Tela</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Observaciones</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                         </thead>                                                                                                    
+                                                    </div>                          
+                                            </table>  
+                                        </div>                                        
+                                             <section>                                                
+                                           <div class="card-header d-flex flex-row-reverse bd-highlight" id="totalMetros" name="cantidad"> <h4></h4> </div>
+                                               
+                                        </section>          
+                                         <div class="col-md-2 mt-2 mb-2 mx-2 ms-auto">                                         
+                                          
+                                       <button type="button" class="btn btn-success  ml-auto" id="save" onclick="saveBackend()">Guardar Registro</button>
+                                        </div> 
+                                                                   
+                                  </div>
+                               </div>  
+                               </section>  
+                  </main>    
+           </form>
+           
+          
+</body>
+<script type='text/javascript' src="/js/ingresotelas.js"> </script> 
+</div>

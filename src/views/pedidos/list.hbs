@@ -1,0 +1,40 @@
+<div class="container">
+    <h3 class="text-center" style="background-color: rgb(245, 236, 192);" >Lista de Pedidos thunder</h3>
+
+    <div class="row text-center " style="background-color: rgb(114, 114, 114);" >        
+        <div class="col-1"><h6>#</h6></div>
+        <div class="col-2"><h6>Nombre</h6></div>
+        <div class="col-2"><h6>Ciudad</h6></div>
+        <div class="col-2"> <h6> Direccion </h6> </div>
+        <div class="col-3"> <h6> Detalle del Pedido </h6></div>
+        <div class="col-1"> <h6>Total</h6> </div>
+        
+    </div>
+    {{#each pedidos}}
+    <div class="card">
+    <div class="row text-center m-1" style="background-color: rgb(208, 208, 208);" >        
+        <div class="col-1"> {{id}} </div>
+        <div class="col-2"><p> {{billing.first_name}} </p></div>
+        <div class="col-2"><p> {{billing.city}} </p></div>
+        <div class="col-2"> <p> {{shipping.address_1}} </p> </div>
+        <div class="col-3">
+          {{#each this.line_items }}
+         {{this.name}} - {{this.quantity}} x {{this.price}}
+         </div>
+         
+         {{/each}}
+         <div class="col-1">250000</div>
+        
+      
+    </div>
+    <div class="row m-2">
+        <div class="col-2"> <a href="/facturar" class="btn btn-success">Facturar</a></div> 
+        <div class="col-2"> <a href="/facturar" class="btn btn-primary">Imprimir Rótulo</a></div>
+        <div class="col-3"> <input type="text" placeholder="Número de guía" > </div>
+    </div>
+    {{/each}}
+    
+    </div>
+    
+</div>
+
